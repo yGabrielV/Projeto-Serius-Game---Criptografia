@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estátua do Leão</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('leao-jornada-2_ne77.jpg') no-repeat center center /cover;
+      color: white;
+      text-align: center;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    #game-container {
+      background: rgba(0, 0, 0, 0.7);
+      margin: 50px auto;
+      padding: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      width: 200px;
+      text-align: center;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+  <script>
+    // Função para decifrar a Cifra de César com deslocamento 3
+    function cifraCesar(texto, deslocamento) {
+      let resultado = '';
+      for (let i = 0; i < texto.length; i++) {
+        let char = texto[i];
+        if (char.match(/[a-z]/i)) {
+          const code = texto.charCodeAt(i);
+          const base = (char === char.toLowerCase()) ? 97 : 65;
+          resultado += String.fromCharCode((code - base + deslocamento) % 26 + base);
+        } else {
+          resultado += char;
+        }
+      }
+      return resultado;
+    }
+
+    function verificarResposta() {
+      const resposta = document.getElementById('resposta').value;
+      const nomeDecifrado = cifraCesar('Qjft', -5); // Nome criptografado "Leão"
+      
+      if (resposta.toLowerCase() === nomeDecifrado.toLowerCase()) {
+        alert('Você decifrou o nome da estátua! Agora você pode interagir com ela.');
+        location.href = 'estatua-leao-interacao.html'; // Leva à página de interação
+      } else {
+        alert('Resposta errada! Tente novamente.');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Estátua do Leão</h1>
+    <p>A estátua à sua frente tem o nome criptografado. Descubra o nome para interagir com ela.</p>
+    <p><strong>Cifra de César (deslocamento 5)</strong></p>
+    <p>Nome criptografado da estátua: <span style="font-size: 20px; color: yellow;">Qjft</span></p>
+    <label for="resposta"></label>
+    <input type="text" id="resposta" placeholder="Digite o nome decifrado">
+    <br>
+    <button class="button" onclick="verificarResposta()">Verificar Resposta</button>
+    <a href="sala-superior.html" class="button">Voltar</a>
+  </div>
+</body>
+</html>

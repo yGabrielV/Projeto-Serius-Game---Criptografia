@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delegacia de Racoon City</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('delegacia-entrada.jpg') no-repeat center center/cover;
+      background-size: cover;
+      color: white;
+      margin: 0;
+      overflow: hidden;
+    }
+    #overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.9);
+    }
+    h1 {
+      font-size: 3rem;
+      text-shadow: 4px 4px 10px black;
+      color: crimson;
+      margin-bottom: 20px;
+      animation: flicker 2s infinite;
+    }
+    p {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.8;
+      color: #ddd;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
+    .button {
+      padding: 15px 40px;
+      margin-top: 30px;
+      background-color: #222;
+      color: white;
+      border: 2px solid crimson;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    }
+    .button:hover {
+      background-color: crimson;
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
+    }
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 100% {
+        text-shadow: 0 0 5px crimson, 0 0 10px crimson, 0 0 20px crimson, 0 0 40px crimson;
+      }
+      20%, 24%, 55% {
+        text-shadow: 0 0 2px crimson, 0 0 4px crimson, 0 0 8px crimson, 0 0 20px crimson;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <h1>Delegacia de Racoon City</h1>
+    <p>Diante de todos os acontecimentos de Racoon City, você se vê preso na delegacia da cidade, onde existe apenas uma saída.</p>
+    <p>Abaixo da estátua da delegacia há um elevador por onde Leon fugiu. Para usá-lo, você precisará encontrar os três medalhões.</p>
+    <a href="hall.html" class="button">Começar</a>
+  </div>
+</body>
+</html>

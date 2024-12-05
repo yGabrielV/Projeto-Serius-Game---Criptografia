@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sala Leste</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('Detonador.webp') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    #game-container {
+      background: rgba(0, 0, 0, 0.7);
+      margin: 50px auto;
+      padding: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Sala Leste</h1>
+    <p>Você encontrou a segunda parte do explosivo!</p>
+    <button class="button" onclick="pegarParteExplosivo()">Pegar Parte do Explosivo</button>
+    <br>
+    <a href="hall.html" class="button">Voltar para o hall</a>
+  </div>
+
+  <script>
+    // Função para pegar a parte do explosivo
+    function pegarParteExplosivo() {
+      // Armazenar a parte do explosivo no localStorage
+      let partesExplosivo = localStorage.getItem('partesExplosivo') || '';
+      partesExplosivo += 'Leste';
+      localStorage.setItem('partesExplosivo', partesExplosivo);
+      alert('Você pegou a parte do explosivo da Sala Leste!');
+    }
+  </script>
+</body>
+</html>

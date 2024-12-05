@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estátua Principal</title>
+  <script>
+    function verificarMedalhoes() {
+      const medalhaoLeao = localStorage.getItem('medalhaoLeao') === 'true';
+      const medalhaoUnicornio = localStorage.getItem('medalhaoUnicornio') === 'true';
+      const medalhaoDonzela = localStorage.getItem('medalhaoDonzela') === 'true';
+
+      if (medalhaoLeao && medalhaoUnicornio && medalhaoDonzela) {
+        alert('Você colocou todos os medalhões na estátua! A saída está aberta!');
+        location.href = 'final.html';
+      } else {
+        alert('Você ainda não coletou todos os medalhões. Continue explorando!');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Estátua Principal</h1>
+    <p>Coloque todos os medalhões aqui para abrir a saída.</p>
+    <button class="button" onclick="verificarMedalhoes()">Colocar Medalhões</button>
+    <a href="hall.html" class="button">Voltar ao Hall Principal</a>
+  </div>
+</body>
+</html>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('estatua do meio.jpeg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    #game-container {
+      background: rgba(0, 0, 0, 0.7);
+      margin: 50px auto;
+      padding: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+ 

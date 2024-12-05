@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você escapou!</title>
+  <script>
+    function resetarJogo() {
+      localStorage.clear();
+      alert('O progresso foi resetado!');
+      location.href = 'hall.html';
+    }
+  </script>
+</head>
+<body>
+  <div id="game-container">
+    <h1>Obrigado por jogar!</h1>
+    <p>Você conseguiu escapar! Parabéns!</p>
+    <button class="button" onclick="resetarJogo()">Jogar Novamente</button>
+  </div>
+</body>
+</html>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('1920x1080-resident-evil-2-background-g1hgp7a43sxk3g9o.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    #game-container {
+      background: rgba(0, 0, 0, 0.7);
+      margin: 50px auto;
+      padding: 20px;
+      width: 80%;
+      border-radius: 10px;
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+  </style>
+ 
